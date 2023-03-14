@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Plant Disease Recognition</title>
+  </head>
+  <body>
+    <h1>Plant Disease Recognition</h1>
+    <form action="{{ url_for('predict') }}" method="post" enctype="multipart/form-data">
+      <input type="file" name="image">
+      <input type="submit" value="Predict">
+    </form>
+  </body>
+</html>
