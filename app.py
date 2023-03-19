@@ -1,7 +1,10 @@
 from flask import Flask, request, jsonify, render_template
 import tensorflow as tf
 from typing import OrderedDict
+from io import BytesIO
+from PIL import Image
 import numpy as np
+
 
 app = Flask(__name__)
 
@@ -13,6 +16,10 @@ model = tf.keras.models.load_model('E:\\coding\\pdr project\\plantdiseaserecogni
 def home():
     return render_template('home.html')
 
+def read_file_as_image(image) -> np.ndarray:
+    image =np.array(Image.open(BytesIO(image)))
+    return image
+
 # Define a prediction endpoint
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -21,6 +28,12 @@ def predict():
     
     # Preprocess the data
     # ...
+
+    # Convert the image bytes to a PIL image object
+    image =np.array(Image.open(BytesIO(image)))
+
+    # Conver the PIL image object to a numpy array
+    image = np.array(image)
     
     # Make a prediction
     inputs = tf.constant(OrderedDict({'image': [image]}))
