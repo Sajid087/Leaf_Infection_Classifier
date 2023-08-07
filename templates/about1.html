@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>About</title>
+    <style>
+        /* your existing CSS styles */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content {
+            animation-name: fadeIn;
+            animation-duration: 2s;
+            animation-delay: 0s;
+            opacity: 0;
+        }
+    </style>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            background-image: url('https://img.freepik.com/free-photo/abstract-luxury-blur-dark-grey-black-gradient-used-as-background-studio-wall-display-your-products-plain-studio-background_1258-54456.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            font-family: sans-serif;
+            color: rgb(126, 63, 190);
+            text-align: right;
+        }
+
+        h1 {
+            margin-top: 150px;
+            font-size: 40px;
+            text-align: center;
+            margin-left: 10px;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 20px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 30px;
+            width: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 2px 2px 5px rgba(28, 23, 23, 0.5);
+            text-align: left;
+            line-height: 1.5;
+        }
+
+        nav {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 30px;
+            font-size: 20px;
+            font-family: sans-serif;
+            font-weight: bold;
+            background-size: cover;
+        }
+
+        nav a {
+            padding: 20px;
+            text-decoration: none;
+            color: rgb(126, 63, 190);
+        }
+
+        nav a:hover {
+            color: rgb(9, 149, 51);
+        }
+
+        ul {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 70px 0;
+            list-style: none;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        ul li {
+            padding: 0 20px;
+            font-size: 18px;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+            animation-delay: 2s;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('about') }}">About Us</a>
+        <a href="{{ url_for('contact') }}">Contact</a>
+    </nav>
+</body>
+<div class='content'>
+    <h1>About Us</h1>
+    <p>We are a group of students who developed the Leaf Infection Classifier as a part of our project. Our team
+        consists of:</p>
+    <ul>
+        <li>
+            <img src="{{ url_for('static', filename='images/sunakshi.jpg') }}"  alt="Sunakshi Borse" height="150px" width="150px"> <br>
+            Sunakshi Borse
+        </li>
+        <li>
+            <img src="{{ url_for('static', filename='images/sagar.jpg') }}"  alt="Sagar Biswas" height="150px" width="150px"> <br>
+            Sagar Biswas
+        </li>
+        <li>
+            <img src="{{ url_for('static', filename='images/sajid.jpg') }}"  alt="Sajid Ansari" height="150px" width="150px"> <br>
+            Sajid Ansari
+        </li>
+        <li>
+            <img src="{{ url_for('static', filename='images/shivani.jpg') }}"  alt="Shivani Patil" height="150px" width="150px"> <br>
+            Shivani Patil
+        </li>
+    </ul>
+</div>
+<script>
+    window.onload = function () {
+        document.querySelector('.content').style.opacity = 1;
+    }
+</script>
+</body>
+
+</html>

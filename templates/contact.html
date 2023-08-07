@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Contact</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            margin-top: 350px;
+            padding-top: 20px;
+            font-size: 36px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        p {
+            font-size: 24px;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        strong {
+            color: #4CAF50;
+        }
+
+        nav {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+            width: 100%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin-left: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background-color: #22e829;
+            color: #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-section {
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 0;
+            animation: slideIn 2s ease forwards;
+        }
+
+        .contact-section h2 {
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .contact-section p {
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .contact-section ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .contact-section li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-section li img {
+            width: 50px;
+            height: 50px;
+            margin-right: 20px;
+        }
+
+        .contact-section li a {
+            color: #333333;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .contact-section li a:hover {
+            color: #3a3e3a;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href=" {{ url_for('about') }}">About Us</a>
+        <a href="{{ url_for('contact') }}">Contact</a>
+    </nav>
+    <h1>Contact</h1>
+    <div class="contact-section">
+        <h2>Get in Touch</h2>
+        <p>The Leaf Infection Classifier is a web-based application that can determine whether a leaf is healthy or
+            diseased, and if diseased, what type of disease it has. It is based on a machine learning model that has
+            been
+            trained on a large dataset of leaf images, and is able to accurately classify the images into one of several
+            categories of diseases. </p>
+        <p>This application can be used by farmers, researchers, and anyone who is interested in plant health to quickly
+            and
+            easily identify potential problems with their plants, and take corrective action before the problem becomes
+            too
+            severe.</p>
+        <p>If you have any questions about the Leaf Infection Classifier, or if you would like to provide feedback or
+            suggestions for improvement, please feel free to contact us using below information:</p>
+        <ul>
+            <li>
+                <img src="https://img.icons8.com/ios-filled/50/4a90e2/email.png" alt="Email">
+                <a href="biswassagar418@gmail.com">biswassagar418@gmail.com 
+                </a>
+        
+            </li>
+            <li>
+                <img src="https://img.icons8.com/ios-filled/50/4a90e2/phone.png" alt="Phone">
+                <a href="8698337621">8698337621
+            </a>
+            </li>
+            <li>
+                <img src="https://img.icons8.com/ios-filled/50/000000/map-pin.png" alt="Location">
+                <a href="#">Panvel Navi Mumbai<br>Maharashtra</a>
+            </li>
+            <li>
+                <img src="https://img.icons8.com/ios-filled/50/4a90e2/linkedin.png" alt="LinkedIn">
+                <a href="https://www.linkedin.com/in/sagar-biswas-110583241/">Contact us on
+                    LinkedIn</a>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
